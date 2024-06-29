@@ -4,8 +4,12 @@
   "description": "electron test",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
   },
   "author": "qpwlkq",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^31.1.0"
+  }
 }
