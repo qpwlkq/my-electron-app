@@ -9,7 +9,8 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "prepare": "husky install",
-    "precommit":"lint-staged"
+    "precommit": "lint-staged",
+    "lint": "prettier --check ."
   },
   "author": "qpwlkq",
   "license": "ISC",
@@ -24,22 +25,18 @@
     "@electron/fuses": "^1.8.0",
     "electron": "^31.1.0",
     "husky": "^8.0.0",
-    "lint-staged": "^15.2.7"
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.2"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1"
   },
-  "husky":{
-    "hooks":{
-      "pre-commit":"npm run precommit"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "src/**/*.{js,vue,jsx,ts,tsx}": [
-      "npm run precommit"
-    ],
-    "src/**/*.{scss,css,vue,less,html}": [
-      "npm run lint"
-    ]
+    "*": "prettier --write"
   }
 }
