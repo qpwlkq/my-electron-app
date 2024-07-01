@@ -9,6 +9,7 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "prepare": "husky install",
+    "precommit":"lint-staged"
   },
   "author": "qpwlkq",
   "license": "ISC",
@@ -28,9 +29,14 @@
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1"
   },
+  "husky":{
+    "hooks":{
+      "pre-commit":"npm run precommit"
+    }
+  },
   "lint-staged": {
     "src/**/*.{js,vue,jsx,ts,tsx}": [
-      "npm run lint"
+      "npm run precommit"
     ],
     "src/**/*.{scss,css,vue,less,html}": [
       "npm run lint"
