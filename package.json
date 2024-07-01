@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "prepare": "husky install",
   },
   "author": "qpwlkq",
   "license": "ISC",
@@ -20,9 +21,19 @@
     "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
     "@electron-forge/plugin-fuses": "^7.4.0",
     "@electron/fuses": "^1.8.0",
-    "electron": "^31.1.0"
+    "electron": "^31.1.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.7"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue,jsx,ts,tsx}": [
+      "npm run lint"
+    ],
+    "src/**/*.{scss,css,vue,less,html}": [
+      "npm run lint"
+    ]
   }
 }
