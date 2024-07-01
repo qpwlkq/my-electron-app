@@ -33,7 +33,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "echo 'git commit trigger husky pre-commit hook' ",
+      "pre-push": "npm test"
     }
   },
   "lint-staged": {
