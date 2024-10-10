@@ -4,7 +4,7 @@ const path = require("node:path");
 function createWindow() {
   const mainWindow = new BrowserWindow({
     webPreferences: {
-      preload: path.join(__dirname, "./src/preload.js"),
+      preload: path.join(__dirname, "./preload.js"),
     },
   });
 
@@ -25,7 +25,7 @@ function createWindow() {
   ]);
 
   Menu.setApplicationMenu(menu);
-  mainWindow.loadFile("./src/index.html");
+  mainWindow.loadFile(path.join(__dirname, "./index.html"));
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
